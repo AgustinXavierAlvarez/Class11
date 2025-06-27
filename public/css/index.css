@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    padding: 0%;
+    font-family: Arial, sans-serif;
+    background-color: #555;
+    color: #e1e1e1;
+}
+header {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header div>img{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+header nav>ul{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav>ul>li {
+    list-style: none;
+}
+
+header nav>ul>li>a {
+    text-decoration: none;
+    color: #e1e1e1;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+header nav>ul>li>a:hover {
+    background-color: #555;
+}
+
+#resultsList{
+    display:flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.character-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 400px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.pagination a, .pagination span {
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #444;
+  border: 1.5px solid transparent;
+  transition: border 0.2s, color 0.2s;
+  font-size: 18px;
+  background: #e1e1e1;
+  cursor: pointer;
+}
+
+.pagination a.active {
+  border: 1.5px solid #2684ff;
+  color: #2684ff;
+  background: #fff;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.pagination a:hover:not(.active) {
+  border: 1.5px solid #bbb;
+  color: #2684ff;
+}
+
+.pagination span {
+  color: #888;
+  cursor: default;
+  border: none;
+  background: none;
+}
