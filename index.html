@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick&Morty</title>
+    <link rel="stylesheet" href="./public/css/index.css">
+    <script src="./public/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./public/img/PepinilloRick-removebg-preview.png" alt="Rick & Morty Logo">
+            <h1>Rick & Morty </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><input type="text" id="searchInput" placeholder="Buscar personaje...">
+                </li>
+                <li><select name="status" id="statusSelect">
+                        <option value="">Estado</option>
+                        <option value="alive">Vivo</option>
+                        <option value="dead">Muerto</option>
+                        <option value="unknown">Desconocido</option>
+                    </select>
+                </li>
+                <li><select name="species" id="speciesSelect">
+                        <option value="">Especie</option>
+                        <option value="human">Humano</option>
+                        <option value="humanoid">Humanoide</option>
+                        <option value="alien">Alienígena</option>
+                        <option value="mythological">Mitológico</option>
+                        <option value="animal">Animal</option>
+                        <option value="robot">Robot</option>
+                        <option value="unknown">Desconocido</option>
+                    </select>
+                </li>
+                <li><select name="gender" id="genderSelect">
+                        <option value="">Sexo</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                        <option value="genderless">Sin género</option>
+                        <option value="unknown">Desconocido</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="resultsList"></div>
+        <div id="pagination"></div>
+    </main>
+    <footer>
+        <p>&copy;A.Alvarez - Actividad Clase 12 - API Rest - Rick & Morty</p>
+    </footer>
+</body>
+</html>
