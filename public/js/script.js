@@ -4,12 +4,13 @@ var genderSelect = document.getElementById("genderSelect");
 var speciesSelect = document.getElementById("speciesSelect");
 var resultsList = document.getElementById("resultsList");
 var pagination = document.getElementById("pagination");
+var btnBurger = document.getElementById("btnBurger");
 var paginas = undefined;
 var arrayFiltros = [];
 var currentPage = 1;
 var urlFiltro = '';
 
-function cargaPersonajes(page,filter='') {
+function cargaPersonajes(page,filter) {
     if(filter==='') {
         fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
           .then(response => response.json())
@@ -21,14 +22,14 @@ function cargaPersonajes(page,filter='') {
                     characterItem.className = "character-item";
                     characterItem.innerHTML = `
                         <h3>${character.name}</h3>
-                        <img src="${character.image}" alt="${character.name}">
+                        <img class="character-image" src="${character.image}" alt="${character.name}">
                         <p>Status: ${character.status}</p>
                         <p>Species: ${character.species}</p>
                         <p>Gender: ${character.gender || "N/A"}</p>
                     `;
                     resultsList.appendChild(characterItem);
                 });
-                mostrarPaginacion(page, paginas);
+                mostrarPaginacion(page, paginas, filter);
             })
             .catch(error => console.error('Error fetching characters:', error));
     }
@@ -43,14 +44,14 @@ function cargaPersonajes(page,filter='') {
                     characterItem.className = "character-item";
                     characterItem.innerHTML = `
                         <h3>${character.name}</h3>
-                        <img src="${character.image}" alt="${character.name}">
+                        <img class="character-image" src="${character.image}" alt="${character.name}">
                         <p>Status: ${character.status}</p>
                         <p>Species: ${character.species}</p>
                         <p>Gender: ${character.gender || "N/A"}</p>
                     `;
                     resultsList.appendChild(characterItem);
                 });
-                mostrarPaginacion(page, paginas);
+                mostrarPaginacion(page, paginas, filter);
             })
             .catch(error => console.error('Error fetching characters:', error));
     }
@@ -106,6 +107,16 @@ function mostrarPaginacion(current, total, urlFiltro) {
     pagination.appendChild(pagDiv);
 }
 
+btnBurger.addEventListener("click", function() {
+    var nav = document.querySelector("ul");
+    var li = document.querySelectorAll("li");
+    nav.classList.toggle("menu-desplegado");
+    li.forEach(function(item) {
+        item.classList.toggle("active-li");
+    });
+
+});
+
 searchInput.addEventListener("keyup", function() {
     var searchTerm = searchInput.value;
     var typeFilter = 'name';
@@ -159,6 +170,6 @@ function sumarFiltros(params) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    cargaPersonajes(currentPage, undefined);
+    cargaPersonajes(currentPage,urlFiltro);
 });
 

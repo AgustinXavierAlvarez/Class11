@@ -21,7 +21,7 @@ header div {
 header div>img{
     width: 100px;
     height: 100px;
-    margin-right: 10px;
+    margin: 0 20px;
 }
 
 header nav>ul{
@@ -46,6 +46,15 @@ header nav>ul>li>a:hover {
     background-color: #555;
 }
 
+#btnBurger {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #e1e1e1;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 #resultsList{
     display:flex;
     flex-wrap: wrap ;
@@ -64,6 +73,13 @@ header nav>ul>li>a:hover {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+}
+
+.character-image{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
 }
 
 .pagination {
